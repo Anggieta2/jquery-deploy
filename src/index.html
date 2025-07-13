@@ -19,8 +19,8 @@
           <a href="#"
             ><i class="bi bi-envelope-fill text-blue-800 text-4xl px-3"></i
           ></a>
-          <a href="#"
-            ><i class="bi bi-list text-blue-800 text-4xl font-extrabold"></i
+          <a href="#" class="text-4xl font-bold text-blue-800"
+            ><i class="bi bi-list"></i
           ></a>
         </div>
       </div>
@@ -89,7 +89,9 @@
         <div
           class="main-content relative w-full h-full flex items-center justify-center px-[5%] py-[2.5%] bg-gradient-to-r from-cyan-500 to-blue-100"
         >
-          <div class="w-4/5 h-[100vh] flex justify-center items-center fixed top-0 right-0 z-40">
+          <div
+            class="w-4/5 h-[100vh] flex justify-center items-center fixed top-0 right-0"
+          >
             <button
               id="toggleSidebar"
               class="bg-cyan-400 left-1/5 text-white rounded-r-full w-10 h-20 flex items-center justify-center shadow-lg z-20 fixed transition-all duration-300"
@@ -97,29 +99,161 @@
               <i id="toggleIcon" class="bi bi-caret-left-fill text-2xl"></i>
             </button>
           </div>
-          <div class="content relative w-full h-full bg-white capitalize p-10 rounded-3xl">
-            <h1 class="font-bold text-4xl text-blue-800">new attendance report</h1>
-            <h2 class="font-semibold text-2xl text-purple-700">digital drawing - basic</h2>
-            <hr>
+          <div
+            class="card-content relative flex flex-col w-full h-full bg-white capitalize p-10 rounded-3xl"
+          >
+            <h1 class="font-bold text-4xl text-blue-800">
+              new attendance report
+            </h1>
+            <h2 class="font-semibold text-2xl text-purple-700">
+              digital drawing - basic
+            </h2>
+            <hr />
             <div class="w-full flex justify-between mt-5">
               <div class="w-[45%]">
-                <h2 class="font-semibold text-2xl text-purple-700">attendance date*</h2>
+                <h2 class="font-semibold text-2xl text-purple-700">
+                  attendance date*
+                </h2>
                 <div class="flex gap-3">
-                  <input type="date" name="" id="" class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2">
-                  <button type="button" class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize">today</button>
+                  <input
+                    type="date"
+                    name=""
+                    id=""
+                    class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2"
+                  />
+                  <button
+                    type="button"
+                    class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize"
+                  >
+                    today
+                  </button>
                 </div>
               </div>
               <div class="w-[45%]">
-                <h2 class="font-semibold text-2xl text-purple-700">add student to attendance*</h2>
+                <h2 class="font-semibold text-2xl text-purple-700">
+                  add student to attendance*
+                </h2>
                 <div class="flex gap-3">
-                  <input type="date" name="" id="" class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2">
-                  <button type="button" class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize">add</button>
+                  <input
+                    type="date"
+                    name=""
+                    id=""
+                    class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2"
+                  />
+                  <button
+                    type="button"
+                    class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize"
+                  >
+                    add
+                  </button>
                 </div>
               </div>
+            </div>
+            <!-- Student List Card -->
+            <h2 class="text-xl font-bold text-blue-800 mb-4">
+              Attendance Report
+            </h2>
+            <div class="mt-10 border rounded-xl p-5 bg-blue-50">
+              <h3 class="text-xl font-bold text-blue-800 mb-4">Students</h3>
+              <div id="studentList" class="flex flex-col gap-3">
+                <div
+                  class="flex justify-between items-center bg-white p-3 rounded-lg shadow"
+                >
+                  <span class="font-medium text-blue-800">Aisyah Nur</span>
+                  <button
+                    class="remove-student text-red-600 hover:text-red-800"
+                  >
+                    <i class="bi bi-x-circle-fill text-xl"></i>
+                  </button>
+                </div>
+                <!-- Tambahkan elemen student lain di sini jika perlu -->
+              </div>
+            </div>
+
+            <!-- Attendance Input Form -->
+            <div class="mt-10 bg-blue-50 rounded-xl p-5">
+              <div class="grid grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-purple-700 font-semibold mb-2"
+                    >Start Time</label
+                  >
+                  <input
+                    type="time"
+                    id="startTime"
+                    class="w-full border border-gray-400 rounded-lg p-2"
+                  />
+                </div>
+                <div>
+                  <label class="block text-purple-700 font-semibold mb-2"
+                    >End Time</label
+                  >
+                  <input
+                    type="time"
+                    id="endTime"
+                    class="w-full border border-gray-400 rounded-lg p-2"
+                  />
+                </div>
+                <div class="col-span-2">
+                  <label class="block text-purple-700 font-semibold mb-2"
+                    >Activity</label
+                  >
+                  <input
+                    type="text"
+                    id="activity"
+                    class="w-full border border-gray-400 rounded-lg p-2"
+                  />
+                </div>
+                <div class="col-span-2">
+                  <label class="block text-purple-700 font-semibold mb-2"
+                    >Learning Status</label
+                  >
+                  <input
+                    type="text"
+                    id="status"
+                    class="w-full border border-gray-400 rounded-lg p-2"
+                  />
+                </div>
+                <div class="col-span-2">
+                  <label class="block text-purple-700 font-semibold mb-2"
+                    >Details</label
+                  >
+                  <textarea
+                    id="details"
+                    rows="3"
+                    class="w-full border border-gray-400 rounded-lg p-2"
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                id="addData"
+                class="mt-5 px-6 py-2 bg-gradient-to-r from-blue-200 to-blue-900 text-white rounded-xl"
+              >
+                Add Data
+              </button>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="mt-10 overflow-x-auto bg-white rounded-xl shadow p-5">
+              <table class="min-w-full text-left table-auto">
+                <thead class="bg-blue-200 text-blue-900">
+                  <tr>
+                    <th class="py-2 px-4">Learning Time</th>
+                    <th class="py-2 px-4">Activity</th>
+                    <th class="py-2 px-4">Details</th>
+                    <th class="py-2 px-4">Learning Status</th>
+                    <th class="py-2 px-4">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="attendanceTableBody" class="text-blue-800">
+                  <!-- Data dari jQuery akan dimasukkan di sini -->
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
