@@ -1,20 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-<body>
-    <header class="bg-black w-full h-20 top-0">
-        <nav class="flex flex-col">
-            <img class="w-15" src="https://sangnila.com/logosangnilawhite.png" alt="">
-            <a href="flex justify" class="bi bi-envelope-fill"></a>
-            <a href="" class="bi bi-list"></a>
-        </nav>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="w-full h-[150vh]">
+    <header class="px-4 bg-white sticky top-0 z-50">
+      <div class="relative mx-auto flex w-full py-4 justify-between">
+        <a href="#" class="text-blue-800 text-2xl font-bold mx-5">Sangnila</a>
+        <div class="px-7 h-10 gap-3">
+          <a href="#"
+            ><i class="bi bi-envelope-fill text-blue-800 text-4xl px-3"></i
+          ></a>
+          <a href="#"
+            ><i class="bi bi-list text-blue-800 text-4xl font-extrabold"></i
+          ></a>
+        </div>
+      </div>
     </header>
-    <script src="script.js"></script>
-</body>
+    <main class="h-full w-full bg-black flex">
+      <div
+        id="sideBar"
+        class="sidebar-wrapper relative top-0 bg-gradient-to-r from-blue-200 to-blue-900 w-1/5 h-full"
+      >
+        <div
+          class="sidebar-content h-screen w-1/5 py-5 fixed top-0 z-49 pt-[7.5%]"
+        >
+          <div class="flex flex-col justify-start items-center">
+            <img
+              class="w-40 rounded-full"
+              src="https://i.pinimg.com/736x/7a/c8/85/7ac885720151463e84421d90fb24549b.jpg"
+              alt=""
+            />
+            <h1 class="text-white font-bold mt-3 text-2xl">Hello Mr.Zick!</h1>
+          </div>
+          <div class="flex flex-col items-start mt-15">
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-grid-1x2-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Dashboard</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bbi bi-mortarboard-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Courses</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-person-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Students</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-chat-left-text-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Forum Discussion</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-check-square-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Assignment</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-postcard-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Attendance</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-receipt-cutoff text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Invoice & Reimburse</p>
+            </div>
+            <div class="flex flex-row mx-7 mb-7 items-center gap-5">
+              <i class="bi bi-megaphone-fill text-white text-3xl"></i>
+              <p class="text-white text-xl font-bold">Announcement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="global-main-content relative w-4/5 flex flex-col">
+        <div
+          class="w-full relative bg-gradient-to-r from-cyan-600 to-blue-100 h-20 flex items-center"
+        >
+          <h1 class="text-white text-3xl font-bold mx-5 capitalize">
+            students attendance
+          </h1>
+        </div>
+        <div
+          class="main-content relative w-full h-full flex items-center justify-center px-[5%] py-[2.5%] bg-gradient-to-r from-cyan-500 to-blue-100"
+        >
+          <div class="w-4/5 h-[100vh] flex justify-center items-center fixed top-0 right-0 z-40">
+            <button
+              id="toggleSidebar"
+              class="bg-cyan-400 left-1/5 text-white rounded-r-full w-10 h-20 flex items-center justify-center shadow-lg z-20 fixed transition-all duration-300"
+            >
+              <i id="toggleIcon" class="bi bi-caret-left-fill text-2xl"></i>
+            </button>
+          </div>
+          <div class="content relative w-full h-full bg-white capitalize p-10 rounded-3xl">
+            <h1 class="font-bold text-4xl text-blue-800">new attendance report</h1>
+            <h2 class="font-semibold text-2xl text-purple-700">digital drawing - basic</h2>
+            <hr>
+            <div class="w-full flex justify-between mt-5">
+              <div class="w-[45%]">
+                <h2 class="font-semibold text-2xl text-purple-700">attendance date*</h2>
+                <div class="flex gap-3">
+                  <input type="date" name="" id="" class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2">
+                  <button type="button" class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize">today</button>
+                </div>
+              </div>
+              <div class="w-[45%]">
+                <h2 class="font-semibold text-2xl text-purple-700">add student to attendance*</h2>
+                <div class="flex gap-3">
+                  <input type="date" name="" id="" class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2">
+                  <button type="button" class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize">add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
