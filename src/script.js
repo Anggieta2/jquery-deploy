@@ -1,14 +1,14 @@
 $(document).ready(function () {
-  $(document).on('click', '.remove-student', function () {
-    $(this).closest('div').remove();
+  $(document).on("click", ".remove-student", function () {
+    $(this).closest("div").remove();
   });
 
-  $('#addData').click(function () {
-    const startTime = $('#startTime').val();
-    const endTime = $('#endTime').val();
-    const activity = $('#activity').val();
-    const status = $('#status').val();
-    const details = $('#details').val();
+  $("#addData").click(function () {
+    const startTime = $("#startTime").val();
+    const endTime = $("#endTime").val();
+    const activity = $("#activity").val();
+    const status = $("#status").val();
+    const details = $("#details").val();
 
     if (!startTime || !endTime || !activity || !status || !details) return;
 
@@ -25,12 +25,20 @@ $(document).ready(function () {
         </td>
       </tr>
     `;
-    $('#attendanceTableBody').append(newRow);
+    $("#attendanceTableBody").append(newRow);
 
-    $('#startTime, #endTime, #activity, #status, #details').val('');
+    $("#startTime, #endTime, #activity, #status, #details").val("");
   });
 
-  $(document).on('click', '.delete-row', function () {
-    $(this).closest('tr').remove();
+  $(document).on("click", ".delete-row", function () {
+    $(this).closest("tr").remove();
   });
 });
+
+
+$(document).ready(function () {
+    $('#toggleMenu').click(function (e) {
+      e.preventDefault(); // mencegah link "#" scroll ke atas
+      $('#menu-list').toggle(); // toggle tampilan menu
+    });
+  });

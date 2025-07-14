@@ -19,29 +19,54 @@
           <a href="#"
             ><i class="bi bi-envelope-fill text-blue-800 text-4xl px-3"></i
           ></a>
-          <a href="#" class="text-4xl font-bold text-blue-800"
+          <a href="#" id="toggleMenu" class="text-4xl font-bold text-blue-800"
             ><i class="bi bi-list"></i
           ></a>
         </div>
       </div>
+      <div id="menu-list" class="absolute bg-slate-100 right-0 m-5 p-5 rounded-xl w-80 hidden">
+        <div class="flex flex-row mb-2 items-center gap-3">
+          <i class="bi bi-question-circle-fill text-xl text-gray-400"></i>
+          <a href="#" class="font-semibold text-xl">Help and Support</a>
+        </div>
+        <div class="flex flex-row mb-2 items-center gap-3">
+          <i class="bi bi-exclamation-square-fill text-xl text-gray-400"></i>
+          <a href="#" class="font-semibold text-xl">Send Feedback</a>
+        </div>
+        <div class="flex flex-row items-center gap-3">
+          <i class="bi bi-box-arrow-right text-xl text-blue-800"></i>
+          <a href="#" class="font-semibold text-xl">Log Out</a>
+        </div>
+      </div>
     </header>
-    <main class="h-full w-full bg-black flex">
-      <div
-        id="sideBar"
-        class="sidebar-wrapper relative top-0 bg-gradient-to-r from-blue-200 to-blue-900 w-1/5 h-full"
-      >
-      
+    <main class="h-full w-full flex">
+      <div id="sideBar" class="sidebar-wrapper relative w-1/5 h-auto">
         <div
-          class="sidebar-content h-screen w-1/5 py-5 fixed top-0 z-49 pt-[7.5%]"
+          class="sidebar-content h-auto w-1/5 top-0 fixed py-5 pt-20 z-49 bg-gradient-to-r from-blue-200 to-blue-900"
         >
-          <div class="flex flex-col justify-start items-center">
+          <a href=""><div class="flex flex-col justify-start items-center">
             <img
               class="w-40 rounded-full"
               src="https://i.pinimg.com/736x/7a/c8/85/7ac885720151463e84421d90fb24549b.jpg"
               alt=""
             />
             <h1 class="text-white font-bold mt-3 text-2xl">Hello Mr.Zick!</h1>
+          </div></a>
+          <div id="profileMenu" class="absolute bg-slate-100/90 top-30 left-70 rounded-xl p-3 w-60 hidden">
+            <div>
+              <h1 class="text-lg font-semibold text-blue-800">Zick Yeager</h1>
+            </div>
+            <div class="bg-gray-400 relative h-1 rounded-md my-3"></div>
+            <div class="flex items-center gap-2">
+              <i class="bi bi-person-circle text-xl text-gray-400"></i>
+              <a href="" class="text-md font-semibold">Edit Profile</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="bi bi-lock-fill text-xl text-gray-400"></i>
+              <a href="" class="text-md font-semibold">Change Password</a>
+            </div>
           </div>
+
           <div class="flex flex-col items-start mt-15">
             <div class="flex flex-row mx-7 mb-7 items-center gap-5">
               <i class="bi bi-grid-1x2-fill text-white text-3xl"></i>
@@ -79,29 +104,29 @@
         </div>
       </div>
 
-      <div class="global-main-content relative w-4/5 flex flex-col">
+      <div class="global-main-content relative w-4/5 h-auto flex flex-col">
         <div
-          class="w-full relative bg-gradient-to-r from-cyan-600 to-blue-100 h-20 flex items-center"
+          class="w-full relative bg-gradient-to-r from-cyan-600 to-gray-200 h-20 flex items-center"
         >
           <h1 class="text-white text-3xl font-bold mx-5 capitalize">
             students attendance
           </h1>
         </div>
         <div
-          class="main-content relative w-full h-auto flex items-center justify-center px-[5%] py-[2.5%] bg-gradient-to-r from-cyan-500 to-blue-100"
+          class="main-content relative w-full h-auto flex items-center justify-center px-[5%] py-[2.5%] bg-gray-200"
         >
           <div
             class="w-4/5 h-[100vh] flex justify-center items-center fixed top-0 right-0"
           >
             <button
               id="toggleSidebar"
-              class="bg-cyan-400 left-1/5 text-white rounded-r-full w-10 h-20 flex items-center justify-center shadow-lg z-20 fixed transition-all duration-300"
+              class="bg-cyan-500 left-1/5 text-white rounded-r-full w-10 h-20 flex items-center justify-center shadow-lg z-20 fixed transition-all duration-300"
             >
               <i id="toggleIcon" class="bi bi-caret-left-fill text-2xl"></i>
             </button>
           </div>
           <div
-            class="card-content relative flex flex-col w-full h-full bg-blue-50 capitalize p-10 rounded-3xl"
+            class="card-content relative flex flex-col w-full h-full bg-sky-50 capitalize p-10 rounded-3xl"
           >
             <h1 class="font-bold text-4xl text-blue-800">
               new attendance report
@@ -109,7 +134,7 @@
             <h2 class="font-semibold text-2xl mb-5 text-purple-700">
               digital drawing - basic
             </h2>
-            <hr class=""/>
+            <hr class="" />
             <div class="w-full flex justify-between mt-5">
               <div class="w-[45%]">
                 <h2 class="font-semibold text-2xl text-purple-700">
@@ -135,12 +160,18 @@
                   add student to attendance*
                 </h2>
                 <div class="flex gap-3">
-                  <select name="" id="" class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2">
+                  <select
+                    name=""
+                    id=""
+                    class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2"
+                  >
                     <option value="">Rofiq Nur Fauzan</option>
                     <option value="">Radika Nur Sa'ban</option>
                     <option value="">Zakaria Ramadan</option>
                     <option value="">Hendra Gunawan</option>
-                    <option value="" selected disabled hidden>Student Name</option>
+                    <option value="" selected disabled hidden>
+                      Student Name
+                    </option>
                   </select>
                   <button
                     type="button"
@@ -151,9 +182,13 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-2xl font-bold text-blue-800 mb-4 mt-10">Attendance Report</h2>
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 mt-10">
+              Attendance Report
+            </h2>
             <div class="mt-0 rounded-xl p-5 bg-white">
-              <h3 class="text-xl font-bold text-blue-800 mb-4">Students Name</h3>
+              <h3 class="text-xl font-bold text-blue-800 mb-4">
+                Students Name
+              </h3>
               <hr />
               <div id="studentList" class="flex flex-col gap-3">
                 <div class="grid grid-cols-2 gap-6">
@@ -240,6 +275,122 @@
             </div>
           </div>
         </div>
+
+        <footer
+          class="flex flex-wrap justify-between items-center gap-4 px-[5%] py-[1.5%] w-full bg-slate-800 h-auto text-white text-lg"
+        >
+          <div class="w-full sm:w-[35%] items-center justify-center">
+            <p class="text-start font-extrabold text-2xl">
+              Sangnila Indonesia Website
+            </p>
+            <p class="text-md mt-1">
+              Copyright © 2025 - Sangnila Interactive Media and Technology
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-4 w-full sm:w-[25%]">
+            <div class="flex flex-col gap-1">
+              <h2 class="text-md font-bold">Find Us</h2>
+              <p>
+                <a
+                  href="https://maps.app.goo.gl/Did4dZueYwVNtSM9A"
+                  class="hover:underline"
+                >
+                  Paskal Hyper Square B70, Jl.Pasir Kaliki No.23, Kec. Cicendo,
+                  Kota Bandung
+                </a>
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <h6 class="text-md font-bold">Contact Us</h6>
+              <ul>
+                <li class="flex items-center gap-2">
+                  <i class="bi bi-telephone"></i>
+                  <a href="https://wa.me/6285693257411" class="hover:underline"
+                    >+62 856-9325-7411</a
+                  >
+                </li>
+                <li class="flex items-center gap-2 mt-1">
+                  <i class="bi bi-envelope"></i>
+                  <a
+                    href="mailto:admin@sangnilaindonesia.com"
+                    class="hover:underline"
+                    >admin@sangnilaindonesia.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex flex-col w-full sm:w-auto">
+            <h6 class="text-md font-bold mb-1">Social Media</h6>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a
+                  href="https://www.instagram.com/sangnila.academy/"
+                  class="flex items-center gap-2 hover:underline"
+                >
+                  <i class="bi bi-instagram"></i><span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/sangnila.artsacademy"
+                  class="flex items-center gap-2 hover:underline"
+                >
+                  <i class="bi bi-facebook"></i><span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@sangnilaartsacademy"
+                  class="flex items-center gap-2 hover:underline"
+                >
+                  <i class="bi bi-tiktok"></i><span>TikTok</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@sangnilaartsacademy1709"
+                  class="flex items-center gap-2 hover:underline"
+                >
+                  <i class="bi bi-youtube"></i><span>YouTube</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/pt-sangnila-interaktif-media-dan-teknologi/"
+                  class="flex items-center gap-2 hover:underline"
+                >
+                  <i class="bi bi-linkedin"></i><span>LinkedIn</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col w-full sm:w-auto relative bottom-13">
+            <h6 class="text-md font-bold mb-1">Sangnila webApps</h6>
+            <ul class="flex flex-col gap-1">
+              <li class="flex items-center gap-2">
+                <i class="bi bi-globe2"></i>
+                <a
+                  href="https://register.sangnilaindonesia.com/admin-login/"
+                  class="hover:underline"
+                  >Academy Registration</a
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="bi bi-globe2"></i>
+                <a
+                  href="https://finance.sangnilaindonesia.com/"
+                  class="hover:underline"
+                  >Learning Management System</a
+                >
+              </li>
+            </ul>
+          </div>
+        </footer>
       </div>
     </main>
 
