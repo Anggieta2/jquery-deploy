@@ -30,22 +30,30 @@ $(document).ready(function () {
     $("#startTime, #endTime, #activity, #status, #details").val("");
   });
 
+  $("#removeStudent").click(() => {
+    $(".student-content").fadeOut()
+  })
+
   $(document).on("click", ".delete-row", function () {
-    $(this).closest("tr").remove();
+    if (confirm("Are you sure you want to delete this row?")) $(this).closest("tr").remove();
+  });
+
+  $(document).on("click", "#today", () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    const todayDate = `${yyyy}-${mm}-${dd}`;
+    $("#date").val(todayDate);
+  })
+
+  $("#toggleMenu").click(function (e) {
+    e.preventDefault();
+    $("#menu-list").toggle();
+  });
+
+  $("#toggleProfile").click(function (e) {
+    e.preventDefault();
+    $("#profileMenu").toggle();
   });
 });
-
-
-$(document).ready(function () {
-    $('#toggleMenu').click(function (e) {
-      e.preventDefault(); // mencegah link "#" scroll ke atas
-      $('#menu-list').toggle(); // toggle tampilan menu
-    });
-  });
-
-$(document).ready(function () {
-    $('#toggleProfile').click(function (e) {
-      e.preventDefault(); // mencegah link "#" scroll ke atas
-      $('#menu-list').toggle(); // toggle tampilan menu
-    });
-  });

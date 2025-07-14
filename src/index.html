@@ -24,7 +24,10 @@
           ></a>
         </div>
       </div>
-      <div id="menu-list" class="absolute bg-slate-100 right-0 m-5 p-5 rounded-xl w-80 hidden">
+      <div
+        id="menu-list"
+        class="absolute bg-slate-100 right-0 m-5 p-5 rounded-xl w-80 hidden"
+      >
         <div class="flex flex-row mb-2 items-center gap-3">
           <i class="bi bi-question-circle-fill text-xl text-gray-400"></i>
           <a href="#" class="font-semibold text-xl">Help and Support</a>
@@ -44,15 +47,22 @@
         <div
           class="sidebar-content h-auto w-1/5 top-0 fixed py-5 pt-20 z-49 bg-gradient-to-r from-blue-200 to-blue-900"
         >
-          <a href="" id="toggleProfile"><div class="flex flex-col justify-start items-center">
-            <img
-              class="w-40 rounded-full"
-              src="https://i.pinimg.com/736x/7a/c8/85/7ac885720151463e84421d90fb24549b.jpg"
-              alt=""
-            />
-            <h1 class="text-white font-bold mt-3 text-2xl">Hello Mr.Zick!</h1>
-          </div></a>
-          <div id="profileMenu" class="absolute bg-slate-100/90 top-30 left-70 rounded-xl p-3 w-60 hidden">
+          <a href="" id="toggleProfile"
+            ><div
+              class="flex flex-col justify-start items-center bottom-5 relative py-5 hover:bg-slate-300/80"
+            >
+              <img
+                class="w-40 rounded-full"
+                src="https://i.pinimg.com/736x/7a/c8/85/7ac885720151463e84421d90fb24549b.jpg"
+                alt=""
+              />
+              <h1 class="text-white font-bold mt-3 text-2xl">Hello Mr.Zick!</h1>
+            </div></a
+          >
+          <div
+            id="profileMenu"
+            class="absolute bg-slate-100/90 top-30 left-70 rounded-xl p-3 w-60 hidden"
+          >
             <div>
               <h1 class="text-lg font-semibold text-blue-800">Zick Yeager</h1>
             </div>
@@ -144,10 +154,11 @@
                   <input
                     type="date"
                     name=""
-                    id=""
+                    id="date"
                     class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2"
                   />
                   <button
+                    id="today"
                     type="button"
                     class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize"
                   >
@@ -185,10 +196,215 @@
             <h2 class="text-2xl font-bold text-blue-800 mb-4 mt-10">
               Attendance Report
             </h2>
-            <div class="mt-0 rounded-xl p-5 bg-white">
-              <h3 class="text-xl font-bold text-blue-800 mb-4">
-                Students Name
-              </h3>
+            <div class="student-content mt-0 rounded-xl p-5 bg-white">
+              <div class="flex justify-between items-center my-3">
+                <h3 class="text-xl font-bold text-blue-800">Students Name</h3>
+                <button
+                  type="button"
+                  id="removeStudent"
+                  class="flex bg-red-700 py-2 px-4 text-white text-md gap-2 rounded-lg hover:bg-slate-700 cursor-pointer"
+                >
+                  <i class="bi bi-trash fill"></i>
+                  <h2>Remove Student</h2>
+                </button>
+              </div>
+
+              <hr />
+              <div id="studentList" class="flex flex-col gap-3">
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Start Time</label
+                    >
+                    <input
+                      type="time"
+                      id="startTime"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >End Time</label
+                    >
+                    <input
+                      type="time"
+                      id="endTime"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Activity</label
+                    >
+                    <input
+                      type="text"
+                      id="activity"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Learning Status</label
+                    >
+                    <input
+                      type="text"
+                      id="status"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div class="col-span-2">
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Details</label
+                    >
+                    <textarea
+                      id="details"
+                      rows="3"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="flex justify-end mt-0">
+                  <button
+                    id="addData"
+                    class="mt-5 px-6 py-2 text-lg bg-gradient-to-r from-blue-200 to-blue-900 text-white rounded-xl hover:cursor-pointer hover:scale-[110%] transition-all duration-500 ease-in-out"
+                  >
+                    Add Data
+                  </button>
+                </div>
+
+                <div
+                  class="mt-5 overflow-x-auto bg-white rounded-xl shadow p-5"
+                >
+                  <table class="min-w-full text-left table-auto">
+                    <thead class="bg-blue-200 text-blue-900">
+                      <tr class="text-center">
+                        <th class="py-2 px-4">Learning Time</th>
+                        <th class="py-2 px-4">Activity</th>
+                        <th class="py-2 px-4">Details</th>
+                        <th class="py-2 px-4">Learning Status</th>
+                        <th class="py-2 px-4">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      id="attendanceTableBody"
+                      class="text-blue-800"
+                    ></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="student-content mt-0 rounded-xl p-5 bg-white">
+              <div class="flex justify-between items-center my-3">
+                <h3 class="text-xl font-bold text-blue-800">Students Name</h3>
+                <button
+                  type="button"
+                  id="removeStudent"
+                  class="flex bg-red-700 py-2 px-4 text-white text-md gap-2 rounded-lg hover:bg-slate-700 cursor-pointer"
+                >
+                  <i class="bi bi-trash fill"></i>
+                  <h2>Remove Student</h2>
+                </button>
+              </div>
+
+              <hr />
+              <div id="studentList" class="flex flex-col gap-3">
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Start Time</label
+                    >
+                    <input
+                      type="time"
+                      id="startTime"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >End Time</label
+                    >
+                    <input
+                      type="time"
+                      id="endTime"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Activity</label
+                    >
+                    <input
+                      type="text"
+                      id="activity"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Learning Status</label
+                    >
+                    <input
+                      type="text"
+                      id="status"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    />
+                  </div>
+                  <div class="col-span-2">
+                    <label class="block text-purple-700 font-semibold mb-2"
+                      >Details</label
+                    >
+                    <textarea
+                      id="details"
+                      rows="3"
+                      class="w-full border border-gray-400 rounded-lg p-2"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="flex justify-end mt-0">
+                  <button
+                    id="addData"
+                    class="mt-5 px-6 py-2 text-lg bg-gradient-to-r from-blue-200 to-blue-900 text-white rounded-xl hover:cursor-pointer hover:scale-[110%] transition-all duration-500 ease-in-out"
+                  >
+                    Add Data
+                  </button>
+                </div>
+
+                <div
+                  class="mt-5 overflow-x-auto bg-white rounded-xl shadow p-5"
+                >
+                  <table class="min-w-full text-left table-auto">
+                    <thead class="bg-blue-200 text-blue-900">
+                      <tr class="text-center">
+                        <th class="py-2 px-4">Learning Time</th>
+                        <th class="py-2 px-4">Activity</th>
+                        <th class="py-2 px-4">Details</th>
+                        <th class="py-2 px-4">Learning Status</th>
+                        <th class="py-2 px-4">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      id="attendanceTableBody"
+                      class="text-blue-800"
+                    ></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="student-content mt-0 rounded-xl p-5 bg-white">
+              <div class="flex justify-between items-center my-3">
+                <h3 class="text-xl font-bold text-blue-800">Students Name</h3>
+                <button
+                  type="button"
+                  id="removeStudent"
+                  class="flex bg-red-700 py-2 px-4 text-white text-md gap-2 rounded-lg hover:bg-slate-700 cursor-pointer"
+                >
+                  <i class="bi bi-trash fill"></i>
+                  <h2>Remove Student</h2>
+                </button>
+              </div>
+
               <hr />
               <div id="studentList" class="flex flex-col gap-3">
                 <div class="grid grid-cols-2 gap-6">
