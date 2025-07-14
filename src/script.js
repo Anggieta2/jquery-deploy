@@ -42,3 +42,10 @@ $(document).ready(function () {
       $('#menu-list').toggle(); // toggle tampilan menu
     });
   });
+
+$(document).ready(function () {
+    $('#toggleProfile').click(function (e) {
+      e.preventDefault(); // mencegah link "#" scroll ke atas
+      $('#menu-list').toggle(); // toggle tampilan menu
+    });
+  });
