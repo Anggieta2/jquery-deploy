@@ -30,6 +30,7 @@
         id="sideBar"
         class="sidebar-wrapper relative top-0 bg-gradient-to-r from-blue-200 to-blue-900 w-1/5 h-full"
       >
+      
         <div
           class="sidebar-content h-screen w-1/5 py-5 fixed top-0 z-49 pt-[7.5%]"
         >
@@ -105,10 +106,10 @@
             <h1 class="font-bold text-4xl text-blue-800">
               new attendance report
             </h1>
-            <h2 class="font-semibold text-2xl text-purple-700">
+            <h2 class="font-semibold text-2xl mb-5 text-purple-700">
               digital drawing - basic
             </h2>
-            <hr />
+            <hr class=""/>
             <div class="w-full flex justify-between mt-5">
               <div class="w-[45%]">
                 <h2 class="font-semibold text-2xl text-purple-700">
@@ -134,12 +135,13 @@
                   add student to attendance*
                 </h2>
                 <div class="flex gap-3">
-                  <input
-                    type="date"
-                    name=""
-                    id=""
-                    class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2"
-                  />
+                  <select name="" id="" class="w-[75%] bg-white border-spacing-5 border border-black rounded-lg p-2">
+                    <option value="">Rofiq Nur Fauzan</option>
+                    <option value="">Radika Nur Sa'ban</option>
+                    <option value="">Zakaria Ramadan</option>
+                    <option value="">Hendra Gunawan</option>
+                    <option value="" selected disabled hidden>Student Name</option>
+                  </select>
                   <button
                     type="button"
                     class="bg-gradient-to-r from-blue-200 to-blue-900 w-[25%] rounded-lg capitalize"
@@ -149,9 +151,9 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-xl font-bold text-white mb-4">Attendance Report</h2>
-            <div class="mt-10 rounded-xl p-5 bg-white">
-              <h3 class="text-xl font-bold text-blue-800 mb-4">Students</h3>
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 mt-10">Attendance Report</h2>
+            <div class="mt-0 rounded-xl p-5 bg-white">
+              <h3 class="text-xl font-bold text-blue-800 mb-4">Students Name</h3>
               <hr />
               <div id="studentList" class="flex flex-col gap-3">
                 <div class="grid grid-cols-2 gap-6">
