@@ -5,59 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
   </head>
   <body>
-    <!-- Container Sidebar -->
-    <div
-      class="fixed top-0 left-0 h-screen w-1/5 bg-gradient-to-r from-blue-200 to-blue-900 overflow-y-auto z-50"
-    >
-      <div class="flex flex-col items-center py-5">
-        <!-- Profile Section -->
-        <img
-          class="w-32 h-32 rounded-full object-cover"
-          src="https://i.pinimg.com/736x/7a/c8/85/7ac885720151463e84421d90fb24549b.jpg"
-          alt="Profile"
-        />
-        <h1 class="text-white font-bold mt-4 text-xl">Hello Mr.Zick!</h1>
-      </div>
+    <div class="flex h-screen">
+      <!-- Sidebar kiri -->
+      <aside class="w-64 bg-blue-900 text-white p-4">
+        <h2 class="text-xl font-bold mb-4">Sidebar</h2>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="block hover:bg-blue-800 p-2 rounded"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block hover:bg-blue-800 p-2 rounded">Profile</a>
+          </li>
+          <li>
+            <a href="#" class="block hover:bg-blue-800 p-2 rounded">Settings</a>
+          </li>
+        </ul>
+      </aside>
 
-      <!-- Navigation Links -->
-      <div class="flex flex-col items-start mt-8 space-y-5 px-6">
-        <div class="flex items-center gap-4">
-          <i class="bi bi-grid-1x2-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Dashboard</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-mortarboard-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Courses</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-person-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Students</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-chat-left-text-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Forum Discussion</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-check-square-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Assignment</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-postcard-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Attendance</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-receipt-cutoff text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg"
-            >Invoice & Reimburse</span
-          >
-        </div>
-        <div class="flex items-center gap-4">
-          <i class="bi bi-megaphone-fill text-white text-2xl"></i>
-          <span class="text-white font-semibold text-lg">Announcement</span>
-        </div>
+      <!-- Konten utama + Navbar -->
+      <div class="flex-1 flex flex-col">
+        <!-- Navbar atas -->
+        <nav class="bg-blue-200 p-4 shadow flex justify-between items-center">
+          <h1 class="text-lg font-semibold text-blue-900">Navbar</h1>
+          <button class="bg-blue-900 text-white px-4 py-2 rounded">
+            Logout
+          </button>
+        </nav>
+
+        <!-- Konten isi -->
+        <main class="flex-1 p-6 bg-gray-100 overflow-y-auto">
+          <p>Ini area konten utama kamu 🎯</p>
+        </main>
       </div>
     </div>
   </body>
